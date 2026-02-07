@@ -3,20 +3,22 @@ import Image from "next/image";
 
 const KeyFilesSection = () => (
   <div className="bg-white px-8 py-4">
-    <h2 className="text-xl font-semibold mb-4">How it works:</h2>
+    <h2 className="text-xl font-semibold mb-4">
+      Core chat surface and supporting files
+    </h2>
     <ul className="space-y-4 text-gray-600">
       <li className="flex items-start gap-2">
         <span>📄</span>
         <span>
-          <code className="font-medium">src/app/layout.tsx</code> - Main layout
-          with TamboProvider
+          <code className="font-medium">src/app/layout.tsx</code> - App shell and
+          global styles
         </span>
       </li>
       <li className="flex items-start gap-2">
         <span>📄</span>
         <span>
           <code className="font-medium font-mono">src/app/chat/page.tsx</code> -
-          Chat page with TamboProvider and MCP integration
+          Primary decision-support chat surface
         </span>
       </li>
       <li className="flex items-start gap-2">
@@ -25,7 +27,7 @@ const KeyFilesSection = () => (
           <code className="font-medium font-mono">
             src/app/interactables/page.tsx
           </code>{" "}
-          - Interactive demo page with tools and components
+          - Optional interactables page (secondary)
         </span>
       </li>
       <li className="flex items-start gap-2">
@@ -34,7 +36,7 @@ const KeyFilesSection = () => (
           <code className="font-medium font-mono">
             src/components/tambo/message-thread-full.tsx
           </code>{" "}
-          - Chat UI
+          - Chat UI composition
         </span>
       </li>
       <li className="flex items-start gap-2">
@@ -43,7 +45,7 @@ const KeyFilesSection = () => (
           <code className="font-medium font-mono">
             src/components/tambo/graph.tsx
           </code>{" "}
-          - A generative graph component
+          - Supporting generative chart component
         </span>
       </li>
       <li className="flex items-start gap-2">
@@ -52,7 +54,7 @@ const KeyFilesSection = () => (
           <code className="font-medium font-mono">
             src/services/population-stats.ts
           </code>{" "}
-          - Example tool implementation with mock population data
+          - Mock data tool used for sample responses
         </span>
       </li>
       <li className="flex items-start gap-2">
@@ -66,7 +68,7 @@ const KeyFilesSection = () => (
         <span className="text-blue-500">📄</span>
         <span>
           <code className="font-medium font-mono">README.md</code> - For more
-          details check out the README
+          details and setup notes
         </span>
       </li>
     </ul>
@@ -105,25 +107,27 @@ export default function Home() {
               className="mb-4"
             />
           </a>
-          <h1 className="text-4xl text-center">tambo-ai chat template</h1>
+          <h1 className="text-4xl text-center">
+            Decision-support chat for automation choices
+          </h1>
         </div>
 
         <div className="w-full space-y-8">
           <div className="bg-white px-8 py-4">
-            <h2 className="text-xl font-semibold mb-4">Setup Checklist</h2>
+            <h2 className="text-xl font-semibold mb-4">Start with chat</h2>
             <ApiKeyCheck>
               <div className="flex gap-4 flex-wrap">
                 <a
                   href="/chat"
                   className="px-6 py-3 rounded-md font-medium shadow-sm transition-colors text-lg mt-4 bg-[#7FFFC3] hover:bg-[#72e6b0] text-gray-800"
                 >
-                  Go to Chat →
+                  Open Chat →
                 </a>
                 <a
                   href="/interactables"
-                  className="px-6 py-3 rounded-md font-medium shadow-sm transition-colors text-lg mt-4 bg-[#FFE17F] hover:bg-[#f5d570] text-gray-800"
+                  className="px-6 py-3 rounded-md font-medium transition-colors text-lg mt-4 border border-gray-300 hover:bg-gray-50 text-gray-700"
                 >
-                  Interactables Demo →
+                  Interactables (optional) →
                 </a>
               </div>
             </ApiKeyCheck>
