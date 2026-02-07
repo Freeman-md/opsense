@@ -17,6 +17,10 @@ import {
   ProcessSummary,
   processSummarySchema,
 } from "@/components/tambo/process-summary";
+import {
+  RecommendationsDisplay,
+  recommendationsDisplaySchema,
+} from "@/components/tambo/recommendations-display";
 import { DataCard, dataCardSchema } from "@/components/ui/card-data";
 import analyzeAutomationSuitabilityTool from "@/tools/analyze-automation-suitability";
 import detectProcessAssumptionsTool from "@/tools/detect-process-assumptions";
@@ -69,6 +73,13 @@ export const components: TamboComponent[] = [
       "A read-only list of assumptions with visible confidence indicators.",
     component: AssumptionsDisplay,
     propsSchema: assumptionsDisplaySchema,
+  },
+  {
+    name: "RecommendationsDisplay",
+    description:
+      "A read-only list of recommendations with visible recommendation type and risk.",
+    component: RecommendationsDisplay,
+    propsSchema: recommendationsDisplaySchema,
   },
   {
     name: "DataCard",
