@@ -10,6 +10,10 @@
 
 import { Graph, graphSchema } from "@/components/tambo/graph";
 import {
+  AssumptionsDisplay,
+  assumptionsDisplaySchema,
+} from "@/components/tambo/assumptions-display";
+import {
   ProcessSummary,
   processSummarySchema,
 } from "@/components/tambo/process-summary";
@@ -58,6 +62,13 @@ export const components: TamboComponent[] = [
       "A read-only summary of a structured process model including activities, decision points, triggers, and outcomes.",
     component: ProcessSummary,
     propsSchema: processSummarySchema,
+  },
+  {
+    name: "AssumptionsDisplay",
+    description:
+      "A read-only list of assumptions with visible confidence indicators.",
+    component: AssumptionsDisplay,
+    propsSchema: assumptionsDisplaySchema,
   },
   {
     name: "DataCard",
