@@ -9,6 +9,10 @@
  */
 
 import { Graph, graphSchema } from "@/components/tambo/graph";
+import {
+  ProcessSummary,
+  processSummarySchema,
+} from "@/components/tambo/process-summary";
 import { DataCard, dataCardSchema } from "@/components/ui/card-data";
 import analyzeAutomationSuitabilityTool from "@/tools/analyze-automation-suitability";
 import detectProcessAssumptionsTool from "@/tools/detect-process-assumptions";
@@ -47,6 +51,13 @@ export const components: TamboComponent[] = [
       "A component that renders various types of charts (bar, line, pie) using Recharts. Supports customizable data visualization with labels, datasets, and styling options.",
     component: Graph,
     propsSchema: graphSchema,
+  },
+  {
+    name: "ProcessSummary",
+    description:
+      "A read-only summary of a structured process model including activities, decision points, triggers, and outcomes.",
+    component: ProcessSummary,
+    propsSchema: processSummarySchema,
   },
   {
     name: "DataCard",
