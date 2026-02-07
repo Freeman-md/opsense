@@ -14,6 +14,10 @@ import {
   assumptionsDisplaySchema,
 } from "@/components/tambo/assumptions-display";
 import {
+  ExplanationRoot,
+  explanationSchema,
+} from "@/components/explanation/explanation-root";
+import {
   ProcessSummary,
   processSummarySchema,
 } from "@/components/tambo/process-summary";
@@ -66,6 +70,13 @@ export const components: TamboComponent[] = [
       "A read-only summary of a structured process model including activities, decision points, triggers, and outcomes.",
     component: ProcessSummary,
     propsSchema: processSummarySchema,
+  },
+  {
+    name: "Explanation",
+    description:
+      "Displays explanation steps with expandable and collapsible content.",
+    component: ExplanationRoot,
+    propsSchema: explanationSchema,
   },
   {
     name: "AssumptionsDisplay",
