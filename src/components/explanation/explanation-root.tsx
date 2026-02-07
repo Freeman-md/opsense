@@ -4,9 +4,6 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { z } from "zod";
 import { ExplanationContext } from "./explanation-context";
-import { ExplanationContent } from "./explanation-content";
-import { ExplanationSteps } from "./explanation-steps";
-import { ExplanationTrigger } from "./explanation-trigger";
 
 export const explanationSchema = z.object({
   steps: z
@@ -33,16 +30,6 @@ export const ExplanationRoot = React.forwardRef<
   const stepList = steps ?? [];
   const Comp = asChild ? Slot : "div";
 
-  const content =
-    children ?? (
-      <>
-        <ExplanationTrigger>Toggle explanation</ExplanationTrigger>
-        <ExplanationContent>
-          <ExplanationSteps />
-        </ExplanationContent>
-      </>
-    );
-
   return (
     <ExplanationContext.Provider
       value={{
@@ -53,7 +40,7 @@ export const ExplanationRoot = React.forwardRef<
       }}
     >
       <Comp ref={ref} data-state={isOpen ? "open" : "closed"} {...props}>
-        {content}
+        {children}
       </Comp>
     </ExplanationContext.Provider>
   );
