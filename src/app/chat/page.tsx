@@ -26,9 +26,31 @@ export default function Home() {
       tools={tools}
       tamboUrl={process.env.NEXT_PUBLIC_TAMBO_URL}
       mcpServers={mcpServers}
+      initialMessages={[
+        {
+          role: "system",
+          content: [
+            {
+              type: "text",
+              text: [
+                "You are a decision-support assistant for structuring messy work into a process model.",
+                "Only run the interpretation flow when the user's message is asking to describe, map, convert, or structure a workflow/process, or when the message contains a clear workflow description (steps, triggers, approvals, handoffs).",
+                "If the user message is NOT a workflow/process request, respond normally and ask what they want to do (structure a process, find assumptions, assess automation, explain reasoning).",
+                "",
+                "When the interpretation flow applies, do this in order:",
+                "1) Call the interpretProcessModel tool using the user's raw text.",
+                "2) Call the detectProcessAssumptions tool using the ProcessModel from step 1.",
+                "3) Respond by rendering ProcessSummary with the ProcessModel and AssumptionsDisplay with the assumptions.",
+                "",
+                "Do not evaluate automation suitability, generate recommendations, or provide explanations in this mode.",
+              ].join(" ")
+            },
+          ],
+        },
+      ]}
     >
       <div className="h-screen">
-        <MessageThreadFull className="max-w-4xl mx-auto"/>
+        <MessageThreadFull className="max-w-4xl mx-auto" />
       </div>
     </TamboProvider>
   );
