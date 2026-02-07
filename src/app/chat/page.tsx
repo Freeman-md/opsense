@@ -48,6 +48,11 @@ export default function Home() {
                 "3) Respond by rendering RecommendationsDisplay with the returned recommendations.",
                 "",
                 "Do not evaluate automation suitability, generate recommendations, or provide explanations in this mode.",
+                "",
+                "When the user asks to explain why a recommendation was made (explain reasoning / why this was recommended):",
+                "1) Only proceed if recommendations already exist from decision analysis. If they do not exist, tell the user to request automation suitability first, or run the decision flow once only if they explicitly want the full flow.",
+                "2) Call the generateDecisionExplanation tool with { recommendations, assumptions }.",
+                "3) Respond by rendering Explanation with steps set to the explanation output.",
               ].join(" ")
             },
           ],
