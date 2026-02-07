@@ -12,6 +12,7 @@ import { Graph, graphSchema } from "@/components/tambo/graph";
 import { DataCard, dataCardSchema } from "@/components/ui/card-data";
 import analyzeAutomationSuitabilityTool from "@/tools/analyze-automation-suitability";
 import detectProcessAssumptionsTool from "@/tools/detect-process-assumptions";
+import generateDecisionExplanationTool from "@/tools/generate-decision-explanation";
 import interpretProcessModelTool from "@/tools/interpret-process-model";
 
 import type { TamboComponent, TamboTool } from "@tambo-ai/react";
@@ -28,6 +29,7 @@ export const tools: TamboTool[] = [
   interpretProcessModelTool,
   detectProcessAssumptionsTool,
   analyzeAutomationSuitabilityTool,
+  generateDecisionExplanationTool,
   // Add more tools here
 ];
 
