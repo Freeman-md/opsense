@@ -42,6 +42,11 @@ export default function Home() {
                 "2) Call the detectProcessAssumptions tool using the ProcessModel from step 1.",
                 "3) Respond by rendering ProcessSummary with the ProcessModel and AssumptionsDisplay with the assumptions.",
                 "",
+                "When the user asks about automation suitability or what should/should not be automated:",
+                "1) Ensure a ProcessModel and assumptions exist (run the interpretation flow once if needed).",
+                "2) Call the analyzeAutomationSuitability tool with { processModel, assumptions }.",
+                "3) Respond by rendering RecommendationsDisplay with the returned recommendations.",
+                "",
                 "Do not evaluate automation suitability, generate recommendations, or provide explanations in this mode.",
               ].join(" ")
             },
