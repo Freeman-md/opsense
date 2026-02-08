@@ -138,9 +138,9 @@ export const ProcessSummary: React.FC<ProcessSummaryProps> = ({
                     Risk level: {decisionPoint.riskLevel}
                   </div>
                 )}
-                {decisionPoint.possibleOutcomes.length > 0 && (
+                {(decisionPoint.possibleOutcomes?.length ?? 0) > 0 && (
                   <ul className="mt-2 space-y-1 text-xs text-foreground">
-                    {decisionPoint.possibleOutcomes.map((outcome, outcomeIndex) => (
+                    {(decisionPoint.possibleOutcomes ?? []).map((outcome, outcomeIndex) => (
                       <li key={`${outcome}-${outcomeIndex}`}>{outcome}</li>
                     ))}
                   </ul>
