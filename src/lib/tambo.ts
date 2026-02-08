@@ -9,6 +9,8 @@
  */
 
 import { Graph, graphSchema } from "@/components/tambo/graph";
+import { InteractableModePicker } from "@/components/tambo/mode-picker/ModePicker";
+import { modePickerSchema } from "@/components/tambo/mode-picker/ModePicker.schema";
 import {
   AssumptionsDisplay,
   assumptionsDisplaySchema,
@@ -16,7 +18,7 @@ import {
 import {
   ExplanationRoot,
   explanationSchema,
-} from "@/components/explanation/explanation-root";
+} from "@/components/tambo/explanation/explanation-root";
 import {
   ProcessSummary,
   processSummarySchema,
@@ -93,6 +95,13 @@ export const components: TamboComponent[] = [
       "A read-only list of recommendations with visible recommendation type and risk.",
     component: RecommendationsDisplay,
     propsSchema: recommendationsDisplaySchema,
+  },
+  {
+    name: "ModePicker",
+    description:
+      "Selectable list of options for choosing a mode or next step. Use to let the user pick from provided options.",
+    component: InteractableModePicker,
+    propsSchema: modePickerSchema,
   },
   {
     name: "DataCard",
